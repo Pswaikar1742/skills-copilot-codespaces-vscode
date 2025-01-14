@@ -1,12 +1,11 @@
-// Create a new web server
-var express = require('express');
-var app = express();
-// Define a route for comments
-app.get('/comments', function(req, res) {
-  res.send('This is the comments page');
-});
-// Start the server on port 3000
-app.listen(3000, function() {
-  console.log('Server listening on port 3000');
+// Create a new web server using the http module
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
 });
 
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
