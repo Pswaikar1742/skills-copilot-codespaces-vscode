@@ -1,4 +1,4 @@
-// Create a new web server using the http module
+// Create web server
 const http = require('http');
 
 const server = http.createServer((req, res) => {
