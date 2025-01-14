@@ -1,12 +1,12 @@
 // Create a new web server
-var http = require('http');
-var port = 3000;
-var server = http.createServer();
-server.listen(port, function() {
-  console.log('Server listening on port', port);
+var express = require('express');
+var app = express();
+// Define a route for comments
+app.get('/comments', function(req, res) {
+  res.send('This is the comments page');
 });
-// Create a request listener
-server.on('request', function(req, res) {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello, world!');
+// Start the server on port 3000
+app.listen(3000, function() {
+  console.log('Server listening on port 3000');
 });
+
